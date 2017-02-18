@@ -27,5 +27,6 @@ app.ws('/chat', function(ws, req) {
 app.use(express.static('public'))
 
 app.listen(process.env.PORT || 3000, function() {
+  console.log(process.env.PORT)
   console.log('express server started')
 })

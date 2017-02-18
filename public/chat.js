@@ -1,4 +1,6 @@
-var ws = new WebSocket('ws://localhost:3000/chat')
+var ws = new WebSocket('ws://lafternoon-basin-55069.herokuapp.com')
+
+https://afternoon-basin-55069.herokuapp.com/)
 
 ws.onopen = function(event) {
   initializeChatClient()
