@@ -18,6 +18,7 @@ function initializeChatClient() {
   }
 
   sendButton.addEventListener('click', function(){
+    console.log('clicked')
     var messageText = message.value
     if (!messageText) {
       alert('Please enter a message before sending')
