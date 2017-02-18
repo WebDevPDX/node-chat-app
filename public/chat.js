@@ -1,4 +1,4 @@
-var ws = new WebSocket('ws://lafternoon-basin-55069.herokuapp.com')
+var ws = new WebSocket('wss://lafternoon-basin-55069.herokuapp.com')
 
 https://afternoon-basin-55069.herokuapp.com/)
 
