@@ -18,7 +18,8 @@ wss.on("connection", function(ws) {
   console.log('websocket connected')
 
   ws.onmessage = function(event) {
-    console.log('message reeived ', event)
+    var receivedMsg = JSON.parse(event.data)
+    console.log('message reeived ', receivedMsg.message)
   }
 
 
