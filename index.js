@@ -19,7 +19,7 @@ wss.on("connection", function(ws) {
 
   ws.onmessage = function(event) {
     var receivedMsg = JSON.parse(event.data)
-    console.log('message reeived ', receivedMsg.message)
+    console.log('message reeived ', receivedMsg.messageText)
   }
 
 
