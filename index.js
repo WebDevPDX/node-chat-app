@@ -15,8 +15,11 @@ var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
 
 wss.on("connection", function(ws) {
-
   console.log('websocket connected')
+
+  ws.onmessage = function(event) {
+    console.log('message reeived ', event)
+  }
 
 
 
