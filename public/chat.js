@@ -1,6 +1,6 @@
-var location = location.origin.replace(/^http/, 'ws')
-console.log(location)
-var ws = new WebSocket(location)
+var host = location.origin.replace(/^http/, 'ws')
+console.log(host)
+var ws = new WebSocket(host)
 
 https://afternoon-basin-55069.herokuapp.com/)
 
