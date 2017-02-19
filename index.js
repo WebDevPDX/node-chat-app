@@ -14,13 +14,24 @@ console.log("http server listening on %d", port)
 var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
 
+var clients = []
+var nextId = 1
+
 wss.on("connection", function(ws) {
   console.log('websocket connected')
+  var clientId = nextId
+  clients[clientId] = {ws : ws}
+  nextId++
 
   ws.onmessage = function(event) {
     var receivedMsg = JSON.parse(event.data)
     console.log('message reeived ', receivedMsg.messageText)
-    ws.send(JSON.stringify(receivedMsg))
+    var messageToSend = {
+      clientId = clientId
+      messageText: receivedMsg.messageText
+    }
+    
+    ws.send(JSON.stringify(messageToSend))
   }
 
 

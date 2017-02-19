@@ -16,8 +16,9 @@ function initializeChatClient() {
 
   ws.onmessage = function(event) {
     var node = document.createElement('p')
-    var receivedString = JSON.parse(event.data)
-    node.innerText = 'Sever says: ' + receivedString.messageText
+    var receivedMsg = JSON.parse(event.data)
+    console.log(receivedMsg)
+    node.innerText = 'Sever says: ' + receivedMsg.messageText
     conversationBox.appendChild(node)
   }
 
