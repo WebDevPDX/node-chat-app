@@ -28,8 +28,9 @@ wss.on("connection", function(ws) {
     //   clientId = clientId
     //   messageText: receivedMsg.messageText
     // }
-
-    ws.send(JSON.stringify(receivedMsg))
+    clients.forEach(function(client, index) {
+      ws.send(JSON.stringify(receivedMsg))
+    })
   }
 
 
