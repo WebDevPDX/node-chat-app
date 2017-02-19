@@ -15,6 +15,7 @@ var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
 
 var clients = []
+var received = ''
 
 wss.on("connection", function(ws) {
   console.log('websocket connected')
@@ -22,18 +23,20 @@ wss.on("connection", function(ws) {
   console.log(clients)
 
   ws.onmessage = function(event) {
-    var receivedMsg = JSON.parse(event.data)
-    console.log('message reeived ', receivedMsg.messageText)
+    received = event.data
+    console.log(received, 'received')
     // var messageToSend = {
     //   clientId = clientId
     //   messageText: receivedMsg.messageText
     // }
-    clients.forEach(function(client, index) {
-      ws.send(JSON.stringify(receivedMsg))
-    })
+
   }
 
-
+function sendAll() {
+  clients.forEach(function(client) {
+    ws.send('this is a message test'))
+  })
+}
 
 
 
