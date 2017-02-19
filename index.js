@@ -14,14 +14,12 @@ console.log("http server listening on %d", port)
 var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
 
-// var clients = []
-// var nextId = 1
+var clients = []
 
 wss.on("connection", function(ws) {
   console.log('websocket connected')
-  // var clientId = nextId
-  // clients[clientId] = {ws : ws}
-  // nextId++
+  clients.push(ws)
+  console.log(clients)
 
   ws.onmessage = function(event) {
     var receivedMsg = JSON.parse(event.data)
