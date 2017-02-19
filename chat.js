@@ -15,6 +15,7 @@ function initializeChatClient() {
   var sendButton = chatbox.querySelector('#sendMessage')
 
   ws.onmessage = function(event) {
+    console.log(event.data)
     var node = document.createElement('p')
     var receivedMsg = JSON.parse(event.data)
     // console.log(receivedMsg)
