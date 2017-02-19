@@ -29,12 +29,12 @@ wss.on("connection", function(ws) {
     //   clientId = clientId
     //   messageText: receivedMsg.messageText
     // }
-
+    sendAll()
   }
 
 function sendAll() {
   clients.forEach(function(client) {
-    ws.send('this is a message test'))
+    ws.send('this is a message test')
   })
 }
 
