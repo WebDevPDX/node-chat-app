@@ -19,29 +19,18 @@ var received = ''
 
 wss.on("connection", function(ws) {
   console.log('websocket connected')
-  clients.push(ws)
-  console.log(clients)
 
-  ws.onmessage = function(event) {
-    received = event.data
-    console.log(received, 'received')
-    // var messageToSend = {
-    //   clientId = clientId
-    //   messageText: receivedMsg.messageText
-    // }
-    sendAll()
-  }
+  clients.push(ws);
+  ws.on('message', function(message) {
+      console.log('received: %s', message);
+      sendAll(message);
+  });
+  // ws.send("NEW USER JOINED");
+});
 
-function sendAll() {
+function sendAll(message) {
+  console.log(message)
   clients.forEach(function(client) {
-    ws.send('this is a message test')
+    client.send(message)
   })
 }
-
-
-
-  // ws.on("close", function() {
-  //   console.log("websocket connection close")
-  //   clearInterval(id)
-  // })
-})

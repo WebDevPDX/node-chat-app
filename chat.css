@@ -1,0 +1,30 @@
+.conversation-window {
+  border: 1px solid #ccc;
+  height: 600px;
+  width: 800px;
+  margin-bottom: 20px;
+}
+
+.chatbox {
+  border: 1px solid #ccc;
+  width: 800px;
+  font-size: 1.2em;
+}
+
+.chatbox input {
+  margin: 5px;
+  font-size: 1em;
+}
+
+.chatbox textarea {
+  margin: 5px;
+  font-size: 1em;
+}
+
+.chatbox button {
+  float: right;
+  font-size: 1.3em;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right: 30px;
+}

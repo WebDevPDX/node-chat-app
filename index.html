@@ -2,13 +2,19 @@
 <html lang="en">
   <head>
     <title>Simple Chat App</title>
+    <link rel="stylesheet" href="chat.css">
   </head>
   <body>
     <div class="conversation-window" id="conversationWindow"></div>
     <div class="chatbox">
-      <label for="messageInput">Enter a message</label>
-      <input type="text" name="messageInput" id="messageInput">
-      <button class="send-message" id="sendMessage">Send</button>
+      <div>
+        <input type="text" id="color" placeholder="Pick A Color">
+        <input type="text" id="userName" placeholder="Your Name Here">
+      </div>
+      <div>
+        <textarea type="text" id="messageInput" placeholder="Enter your message here" rows="4" cols="65"></textarea>
+        <button class="send-message" id="sendMessage">Send</button>
+      </div>
     </div>
     <script src="chat.js"></script>
   </body>
